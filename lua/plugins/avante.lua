@@ -13,6 +13,7 @@ return {
           model = "deepseek-coder",
         },
       },
+      -- tab押した時、windowスイッチするデフォルトの挙動を無効化
       mappings = {
         --- @class AvanteConflictMappings
         sidebar = {
