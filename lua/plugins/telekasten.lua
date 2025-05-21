@@ -1,4 +1,5 @@
 -- telekasten settings
+--[[
 local private_home = vim.fn.expand("~/dev/telekasten/private")
 local work_home = vim.fn.expand("~/dev/telekasten/work")
 
@@ -42,20 +43,29 @@ local vaults = {
   work = work,
   private = private,
 }
+]]
+
+local home = vim.fn.expand("~/dev/telekasten")
+local daily = vim.fn.expand("~/dev/telekasten/daily")
+local weekly = vim.fn.expand("~/dev/telekasten/weekly")
+local templates = vim.fn.expand("~/dev/telekasten/templates")
+local template_default = vim.fn.expand("~/dev/telekasten/templates/default.md")
+local template_daily = vim.fn.expand("~/dev/telekasten/templates/daily.md")
+local template_weekly = vim.fn.expand("~/dev/telekasten/templates/weekly.md")
 
 return {
   {
     "renerocksai/telekasten.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     opts = {
-      home = private_home,
-      dailies = daily_private,
-      weeklies = weekly_private,
-      templates = templates_private,
-      template_new_note = template_new_note_private,
-      template_new_daily = template_new_daily_private,
-      template_new_weekly = template_new_weekly_private,
-      vaults = vaults,
+      home = home,
+      dailies = daily,
+      weeklies = weekly,
+      templates = templates,
+      template_default = template_default,
+      template_daily = template_daily,
+      template_weekly = template_weekly,
+      -- vaults = vaults,
 
       auto_set_filetype = false,
       filetype = "markdown",
