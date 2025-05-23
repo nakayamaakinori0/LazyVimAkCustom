@@ -45,6 +45,8 @@ return {
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       -- copilotのプラグインがうまくインストールできないので一旦コメントアウト
       -- "zbirenbaum/copilot.lua", -- for providers='copilot'
+      -- img-clipのプラグインがうまくインストールできないので一旦コメントアウト
+      --[[
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
@@ -62,6 +64,7 @@ return {
           },
         },
       },
+      --]]
       {
         -- Make sure to set this up properly if you have lazy=true
         "MeanderingProgrammer/render-markdown.nvim",
