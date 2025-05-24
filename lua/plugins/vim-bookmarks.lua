@@ -8,6 +8,8 @@ return {
       vim.keymap.set("n", "<leader>mm", "<cmd>BookmarkToggle<cr>", { desc = "BookmarkToggle" })
       vim.keymap.set("n", "<leader>mi", "<cmd>BookmarkAnnotate<cr>", { desc = "BookmarkAnnotate" })
       vim.keymap.set("n", "<leader>ml", "<cmd>BookmarkShowAll<cr>", { desc = "BookmarkShowAll" })
+      vim.keymap.set("n", "<leader>mn", "<cmd>BookmarkNext<cr>", { desc = "BookmarkNext" })
+      vim.keymap.set("n", "<leader>mp", "<cmd>BookmarkPrev<cr>", { desc = "BookmarkPrev" })
     end,
   },
 }
