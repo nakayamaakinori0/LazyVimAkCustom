@@ -15,12 +15,22 @@ return {
         },
       },
       --]]
+      --[[
       provider = "gemini",
       gemini = {
         --https://ai.google.dev/gemini-api/docs/models/gemini
         model = "gemini-2.5-flash-preview-04-17",
         temperature = 0,
         max_tokens = 4096,
+      },
+      --]]
+      provider = "claude",
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-sonnet-4-20250514", -- Claude 4 Sonnet（最新）
+        temperature = 0,
+        max_tokens = 4096,
+        api_key_name = "ANTHROPIC_API_KEY", -- 環境変数名
       },
       -- tab押した時、windowスイッチするデフォルトの挙動を無効化
       mappings = {
@@ -33,7 +43,6 @@ return {
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "stevearc/dressing.nvim",
