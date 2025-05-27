@@ -1,7 +1,6 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.supermaven",
-    "lazyvim.plugins.extras.lang.php",
     "lazyvim.plugins.extras.linting.eslint"
   ],
   "install_version": 8,
