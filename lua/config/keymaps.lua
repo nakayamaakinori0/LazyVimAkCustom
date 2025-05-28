@@ -22,4 +22,17 @@ vim.keymap.set("n", "<leader>td", function()
 end, { desc = "Insert current date (YYYY-MM-DD)" })
 vim.keymap.set("n", "<leader>ws", ":split<CR>")
 vim.keymap.set("n", "<leader>wv", ":vsplit<CR>")
--- vim.keymap.set("n", "<leader>p", ":echo expand("%:p")
+vim.keymap.set("n", "<leader>gd", function()
+  local diffview = require("diffview.lib")
+  if diffview.get_current_view() then
+    vim.cmd("DiffviewClose")
+  else
+    vim.cmd("DiffviewOpen")
+  end
+end, { desc = "Toggle Diffview" })
+
+vim.keymap.set("n", "<leader>fp", function()
+  local path = vim.fn.expand("%:.")
+  vim.fn.setreg("+", path)
+  print("Copied to clipboard: " .. path)
+end, { desc = "Copy relative file path" })
