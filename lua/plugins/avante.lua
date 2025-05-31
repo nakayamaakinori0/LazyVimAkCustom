@@ -15,7 +15,6 @@ return {
         },
       },
       --]]
-      --[[
       provider = "gemini",
       gemini = {
         --https://ai.google.dev/gemini-api/docs/models/gemini
@@ -23,7 +22,7 @@ return {
         temperature = 0,
         max_tokens = 4096,
       },
-      --]]
+      --[[
       provider = "claude",
       claude = {
         endpoint = "https://api.anthropic.com",
@@ -32,6 +31,7 @@ return {
         max_tokens = 4096,
         api_key_name = "ANTHROPIC_API_KEY", -- 環境変数名
       },
+      --]]
       -- tab押した時、windowスイッチするデフォルトの挙動を無効化
       mappings = {
         --- @class AvanteConflictMappings
@@ -49,11 +49,11 @@ return {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
-      "echasnovski/mini.pick", -- for file_selector provider mini.pick
+      "echasnovski/mini.pick",         -- for file_selector provider mini.pick
       "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-      "ibhagwan/fzf-lua", -- for file_selector provider fzf
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
+      "ibhagwan/fzf-lua",              -- for file_selector provider fzf
+      "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
       -- copilotのプラグインがうまくインストールできないので一旦コメントアウト
       -- "zbirenbaum/copilot.lua", -- for providers='copilot'
       -- img-clipのプラグインがうまくインストールできないので一旦コメントアウト
