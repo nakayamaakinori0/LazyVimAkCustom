@@ -1,74 +1,37 @@
 -- telekasten settings
---[[
-local private_home = vim.fn.expand("~/dev/telekasten/private")
-local work_home = vim.fn.expand("~/dev/telekasten/work")
+local base_path = "~/dev/telekasten"
 
-local daily_private = vim.fn.expand("~/dev/telekasten/private/daily")
-local weekly_private = vim.fn.expand("~/dev/telekasten/private/weekly")
+-- vault設定を生成する関数
+local function create_vault(name)
+  local vault_path = vim.fn.expand(base_path .. "/" .. name)
+  return {
+    home = vault_path,
+    dailies = vault_path .. "/daily",
+    weeklies = vault_path .. "/weekly",
+    templates = vault_path .. "/templates",
+    template_new_note = vault_path .. "/templates/default.md",
+    template_new_daily = vault_path .. "/templates/daily.md",
+    template_new_weekly = vault_path .. "/templates/weekly.md",
+  }
+end
 
-local daily_work = vim.fn.expand("~/dev/telekasten/work/daily")
-local weekly_work = vim.fn.expand("~/dev/telekasten/work/weekly")
-
-local templates_private = vim.fn.expand("~/dev/telekasten/private/templates")
-local template_new_note_private = vim.fn.expand("~/dev/telekasten/private/templates/default.md")
-local template_new_daily_private = vim.fn.expand("~/dev/telekasten/private/templates/daily.md")
-local template_new_weekly_private = vim.fn.expand("~/dev/telekasten/private/templates/weekly.md")
-
-local templates_work = vim.fn.expand("~/dev/telekasten/work/templates")
-local template_new_note_work = vim.fn.expand("~/dev/telekasten/work/templates/default.md")
-local template_new_daily_work = vim.fn.expand("~/dev/telekasten/work/templates/daily.md")
-local template_new_weekly_work = vim.fn.expand("~/dev/telekasten/work/templates/weekly.md")
-
-local private = {
-  home = private_home,
-  dailies = daily_private,
-  weeklies = weekly_private,
-  templates = templates_private,
-  template_new_note = template_new_note_private,
-  template_new_daily = template_new_daily_private,
-  template_new_weekly = template_new_weekly_private,
-}
-
-local work = {
-  home = work_home,
-  dailies = daily_work,
-  weeklies = weekly_work,
-  templates = templates_work,
-  template_new_note = template_new_note_work,
-  template_new_daily = template_new_daily_work,
-  template_new_weekly = template_new_weekly_work,
-}
-
+-- vault定義
 local vaults = {
-  work = work,
-  private = private,
+  private = create_vault("private"),
+  work = create_vault("work"),
 }
-]]
 
-local home = vim.fn.expand("~/dev/telekasten")
-local daily = vim.fn.expand("~/dev/telekasten/daily")
-local weekly = vim.fn.expand("~/dev/telekasten/weekly")
-local templates = vim.fn.expand("~/dev/telekasten/templates")
-local template_default = vim.fn.expand("~/dev/telekasten/templates/default.md")
-local template_daily = vim.fn.expand("~/dev/telekasten/templates/daily.md")
-local template_weekly = vim.fn.expand("~/dev/telekasten/templates/weekly.md")
+-- デフォルトvault
+local default_vault = vaults.private
 
 return {
   {
     "renerocksai/telekasten.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
-    opts = {
-      home = home,
-      dailies = daily,
-      weeklies = weekly,
-      templates = templates,
-      template_new_note = template_default,
-      template_new_daily = template_daily,
-      template_new_weekly = template_weekly,
-      -- vaults = vaults,
-
+    opts = vim.tbl_extend("force", default_vault, {
+      vaults = vaults,
       auto_set_filetype = false,
       filetype = "markdown",
-    },
+    }),
   },
 }
