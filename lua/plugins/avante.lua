@@ -16,20 +16,27 @@ return {
       },
       --]]
       provider = "gemini",
-      gemini = {
-        --https://ai.google.dev/gemini-api/docs/models/gemini
-        model = "gemini-2.5-flash-preview-04-17",
-        temperature = 0,
-        max_tokens = 4096,
+      vendors = {
+        gemini = {
+          __inherited_from = "openai",
+          api_key_name = "GEMINI_API_KEY",
+          endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+          model = "gemini-2.5-flash-preview-04-17",
+          temperature = 0,
+          max_tokens = 4096,
+        },
       },
       --[[
       provider = "claude",
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-sonnet-4-20250514", -- Claude 4 Sonnet（最新）
-        temperature = 0,
-        max_tokens = 4096,
-        api_key_name = "ANTHROPIC_API_KEY", -- 環境変数名
+      vendors = {
+        claude = {
+          __inherited_from = "claude",
+          endpoint = "https://api.anthropic.com",
+          model = "claude-sonnet-4-20250514", -- Claude 4 Sonnet（最新）
+          temperature = 0,
+          max_tokens = 4096,
+          api_key_name = "ANTHROPIC_API_KEY", -- 環境変数名
+        },
       },
       --]]
       -- tab押した時、windowスイッチするデフォルトの挙動を無効化
