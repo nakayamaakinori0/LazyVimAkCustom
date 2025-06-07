@@ -62,9 +62,9 @@ return {
       dailies = daily,
       weeklies = weekly,
       templates = templates,
-      template_default = template_default,
-      template_daily = template_daily,
-      template_weekly = template_weekly,
+      template_new_note = template_default,
+      template_new_daily = template_daily,
+      template_new_weekly = template_weekly,
       -- vaults = vaults,
 
       auto_set_filetype = false,
