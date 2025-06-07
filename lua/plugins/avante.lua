@@ -6,36 +6,37 @@ return {
     opts = {
       --[[
       provider = "deepseek",
-      vendors = {
+      providers = {
         deepseek = {
-          __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
           endpoint = "https://api.deepseek.com",
           model = "deepseek-coder",
+          api_key_name = "DEEPSEEK_API_KEY",
         },
       },
       --]]
       provider = "gemini",
-      vendors = {
+      providers = {
         gemini = {
-          __inherited_from = "openai",
-          api_key_name = "GEMINI_API_KEY",
           endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
           model = "gemini-2.5-flash-preview-04-17",
-          temperature = 0,
-          max_tokens = 4096,
+          api_key_name = "GEMINI_API_KEY",
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 4096,
+          },
         },
       },
       --[[
       provider = "claude",
-      vendors = {
+      providers = {
         claude = {
-          __inherited_from = "claude",
           endpoint = "https://api.anthropic.com",
           model = "claude-sonnet-4-20250514", -- Claude 4 Sonnet（最新）
-          temperature = 0,
-          max_tokens = 4096,
           api_key_name = "ANTHROPIC_API_KEY", -- 環境変数名
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 4096,
+          },
         },
       },
       --]]

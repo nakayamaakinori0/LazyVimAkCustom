@@ -12,13 +12,11 @@ return {
     },
   },
   -- LazyVim の保存時自動フォーマットを無効化
-  --[[
   init = function()
     vim.api.nvim_clear_autocmds({
       group = vim.api.nvim_create_augroup("LazyFormat", { clear = false }),
     })
   end,
-  --]]
   opts = {
     format_on_save = false,
 
