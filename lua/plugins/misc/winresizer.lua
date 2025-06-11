@@ -5,6 +5,8 @@ return {
     { "<C-w>", "<cmd>WinResizerStartResize<cr>", desc = "Start window resize mode" },
   },
 
+  enabled = false,
+
   config = function()
     -- ウィンドウサイズ変更の設定
     vim.g.winresizer_vert_resize = 5  -- 垂直方向
