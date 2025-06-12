@@ -44,6 +44,6 @@ return {
     vim.g.mkdp_filetypes = { "markdown" }
     
     -- テーマ設定
-    vim.g.mkdp_theme = 'dark'                    -- ダークテーマ
+    vim.g.mkdp_theme = 'light'
   end,
 }
