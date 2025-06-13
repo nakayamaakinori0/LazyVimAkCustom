@@ -128,6 +128,7 @@ return {
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         map("K", vim.lsp.buf.hover, "Hover Documentation")
         map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("<leader>cd", vim.diagnostic.open_float, "Show [D]iagnostics")
 
         -- ドキュメントハイライト（サーバーがサポートしている場合）
         local client = vim.lsp.get_client_by_id(event.data.client_id)

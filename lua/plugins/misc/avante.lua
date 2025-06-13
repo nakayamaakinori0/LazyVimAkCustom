@@ -18,7 +18,7 @@ return {
       providers = {
         gemini = {
           endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-          model = "gemini-2.5-flash-preview-04-17",
+          model = "gemini-1.5-flash",
           api_key_name = "GEMINI_API_KEY",
           extra_request_body = {
             temperature = 0,
