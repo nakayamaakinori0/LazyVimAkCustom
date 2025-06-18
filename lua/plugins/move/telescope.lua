@@ -20,16 +20,16 @@ return {
     { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep (root dir)" },
     { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
-    
+
     -- ファイル操作
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-    
+
     -- Git操作
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
     { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
-    
+
     -- 検索操作
     { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
     { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
@@ -84,3 +84,4 @@ return {
     },
   },
 }
+

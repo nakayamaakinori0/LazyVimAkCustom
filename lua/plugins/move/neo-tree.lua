@@ -2,7 +2,7 @@
 -- サイドバーでのファイル管理とGit統合
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  lazy = false,  -- 起動時に即座に読み込み
+  lazy = false, -- 起動時に即座に読み込み
   keys = {
     {
       "<leader>fe",
@@ -45,7 +45,7 @@ return {
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = { enabled = true }, -- 現在のファイルを追従
-      use_libuv_file_watcher = true,           -- ファイル変更を監視
+      use_libuv_file_watcher = true, -- ファイル変更を監視
     },
     window = {
       mappings = {
@@ -62,3 +62,4 @@ return {
     },
   },
 }
+
