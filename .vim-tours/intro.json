@@ -1,0 +1,7 @@
+{
+  "steps": [
+    {"file": "init.lua", "line": 1, "text": "エントリーポイント"},
+    {"file": "lua/config/lazy.lua", "line": 2, "text": "設定ファイル"},
+    {"file": "lua/config/keymaps.lua", "line": 25, "text": "キーマップ"}
+  ]
+}
