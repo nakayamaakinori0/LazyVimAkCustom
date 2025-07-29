@@ -122,13 +122,13 @@ vim.keymap.set("n", "<leader>gd", function()
   end
 end, { desc = "Toggle Diffview" })
 
-vim.keymap.set("n", "<leader>fp", function()
+vim.keymap.set("n", "<leader>fy", function()
   local path = vim.fn.expand("%:.")
   vim.fn.setreg("+", path)
   print("Copied to clipboard: " .. path)
 end, { desc = "Copy relative file path" })
 
-vim.keymap.set("n", "<leader>fP", function()
+vim.keymap.set("n", "<leader>fY", function()
   local path = vim.fn.expand("%:p")
   vim.fn.setreg("+", path)
   print("Copied to clipboard: " .. path)
