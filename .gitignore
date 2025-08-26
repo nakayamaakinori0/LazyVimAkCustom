@@ -8,3 +8,4 @@ foo.*
 data
 .vim-bookmarks
 .aider*
+.DS_Store
