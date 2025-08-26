@@ -1,10 +1,7 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Previously LazyVim default keymaps, now explicitly set
-
-local function map(mode, lhs, rhs, opts)
-  opts = opts or {}
-  opts.silent = opts.silent ~= false
-  vim.keymap.set(mode, lhs, rhs, opts)
+local function map(mode, after, before, desc)
+  desc = desc or {}
+  desc.silent = desc.silent ~= false
+  vim.keymap.set(mode, after, before, desc)
 end
 
 -- Window navigation
@@ -12,14 +9,6 @@ map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
-
--- Better up/down
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-
--- Move to window using the <ctrl> hjkl keys (defined in options.lua)
 
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
@@ -36,20 +25,12 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Buffers
--- map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
--- map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<Tab>", ":BufferLineCycleNext<CR>")
+map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
+map("n", "<leader>h", ":BufferLineMovePrev<CR>")
+map("n", "<leader>l", ":BufferLineMoveNext<CR>")
 
--- Clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
-
--- Save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
--- Better indenting
+-- Range indent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
@@ -104,10 +85,6 @@ vim.keymap.set("n", "H", "0")
 vim.keymap.set("n", "L", "$")
 vim.keymap.set("v", "H", "0")
 vim.keymap.set("v", "L", "$")
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>h", ":BufferLineMovePrev<CR>")
-vim.keymap.set("n", "<leader>l", ":BufferLineMoveNext<CR>")
 
 vim.keymap.set("n", "<leader>tk", ":Telekasten panel<CR>")
 vim.keymap.set("n", "<leader>td", function()

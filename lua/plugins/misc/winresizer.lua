@@ -5,7 +5,7 @@ return {
     { "<C-w>", "<cmd>WinResizerStartResize<cr>", desc = "Start window resize mode" },
   },
 
-  enabled = true,
+  enabled = false,
 
   config = function()
     -- ウィンドウサイズ変更の設定
