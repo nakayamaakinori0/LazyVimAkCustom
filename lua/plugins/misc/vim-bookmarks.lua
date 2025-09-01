@@ -5,11 +5,17 @@ return {
     config = function()
       vim.g.bookmark_save_per_working_dir = 1
       vim.g.bookmark_auto_save = 1
+      vim.g.bookmark_no_default_key_mappings = 1
+      vim.g.bookmark_highlight_lines = 1
+      vim.cmd([[
+        highlight BookmarkSign guifg=#00DABD guibg=NONE
+      ]])
       vim.keymap.set("n", "mm", "<cmd>BookmarkToggle<cr>", { desc = "BookmarkToggle" })
       vim.keymap.set("n", "mi", "<cmd>BookmarkAnnotate<cr>", { desc = "BookmarkAnnotate" })
       vim.keymap.set("n", "ml", "<cmd>BookmarkShowAll<cr>", { desc = "BookmarkShowAll" })
       vim.keymap.set("n", "mn", "<cmd>BookmarkNext<cr>", { desc = "BookmarkNext" })
       vim.keymap.set("n", "mp", "<cmd>BookmarkPrev<cr>", { desc = "BookmarkPrev" })
+      vim.keymap.set("n", "mD", "<cmd>BookmarkClearAll<cr>", { desc = "BookmarkClearAll" })
     end,
   },
 }

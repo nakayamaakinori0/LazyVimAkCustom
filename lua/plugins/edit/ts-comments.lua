@@ -1,7 +1,5 @@
--- コメント機能: ts-comments.nvim
--- Treesitterベースのコメント切り替え
+-- 組み込みのneovimのコメント機能を拡張するプラグイン
 return {
   "folke/ts-comments.nvim",
   event = "VeryLazy",
-  opts = {},
 }

@@ -2,7 +2,7 @@
 -- ブラウザでリアルタイムプレビュー、Mermaidダイアグラム対応
 return {
   "iamcco/markdown-preview.nvim",
-  enabled = true,  -- peek.nvimを使用
+  enabled = true,
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   ft = { "markdown" },
   build = function()

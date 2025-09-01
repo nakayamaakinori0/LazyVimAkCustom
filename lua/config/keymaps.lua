@@ -29,6 +29,8 @@ map("n", "<Tab>", ":BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 map("n", "<leader>h", ":BufferLineMovePrev<CR>")
 map("n", "<leader>l", ":BufferLineMoveNext<CR>")
+map("n", "<leader>bd", ":bdelete<CR>")
+map("n", "<leader>bD", ":BufferLinePickClose<CR>")
 
 -- Range indent
 map("v", "<", "<gv")
@@ -50,8 +52,8 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+-- map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+-- map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })

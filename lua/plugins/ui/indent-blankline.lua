@@ -2,6 +2,7 @@
 -- インデントの可視化
 return {
   "lukas-reineke/indent-blankline.nvim",
+  enabled = true,
   main = "ibl",
   event = { "BufReadPost", "BufNewFile" },
   opts = {

@@ -22,7 +22,7 @@ local vaults = {
 }
 
 -- デフォルトvault
-local default_vault = vaults.private
+local default_vault = vaults.work
 
 return {
   {

@@ -1,5 +1,4 @@
--- Lua開発支援: lazydev.nvim
--- Neovim Lua API の補完とドキュメント
+-- neovim上のlua言語サーバー
 return {
   "folke/lazydev.nvim",
   ft = "lua",
