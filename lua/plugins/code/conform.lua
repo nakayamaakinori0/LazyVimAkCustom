@@ -13,6 +13,7 @@ return {
   },
   opts = {
     format_on_save = false,
+    -- フォーマッターを追加する場合、masonでインストール後ここに追記する
     formatters_by_ft = {
       lua = { "stylua" },
       sh = { "shfmt" },
@@ -22,6 +23,7 @@ return {
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       vue = { "prettier" },
+      markdown = { "prettier" },
     },
   },
 }
