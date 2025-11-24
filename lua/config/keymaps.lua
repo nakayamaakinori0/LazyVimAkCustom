@@ -85,3 +85,7 @@ vim.keymap.set("n", "<leader>fY", function()
   vim.fn.setreg("+", path)
   print("Copied to clipboard: " .. path)
 end, { desc = "Copy absolute file path" })
+
+vim.keymap.set("n", "<leader>cc", "gcc", { desc = "Toggle comment on current line", remap = true })
+
+vim.keymap.set("n", "<leader>q", ":q<CR>")
