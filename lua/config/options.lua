@@ -67,7 +67,8 @@ vim.opt.updatetime = 200
 vim.opt.virtualedit = "block"
 vim.opt.wildmode = "longest:full,full"
 vim.opt.winminwidth = 5
-vim.opt.wrap = false
+vim.opt.wrap = true            -- 画面幅を超えたら折り返す
+vim.opt.linebreak = true   -- 単語の途中で折り返さない（見やすくなる）
 vim.opt.writebackup = false
 
 -- Disable builtin plugins we don't need
