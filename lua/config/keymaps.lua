@@ -11,10 +11,10 @@ vim.keymap.set("n", "<leader>O", "O<Esc>")
 vim.keymap.set("n", "<leader>r", ":%s///gc<Left><Left><Left><Left>", { desc = "Replace in file" })
 
 -- Window navigation
-vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Go to left window" })
-vim.keymap.set("n", "<leader>j", "<C-w>j", { desc = "Go to lower window" })
-vim.keymap.set("n", "<leader>k", "<C-w>k", { desc = "Go to upper window" })
-vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Go to right window" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "Open parent directory" })
 
