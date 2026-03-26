@@ -5,7 +5,7 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
-      theme = "tokyonight",
+      theme = "solarized_light",
       globalstatus = true,
       disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
     },
