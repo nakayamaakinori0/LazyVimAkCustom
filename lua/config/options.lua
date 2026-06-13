@@ -8,7 +8,7 @@ vim.g.maplocalleader = ","
 -- Clipboard
 vim.opt.clipboard:append("unnamed") -- ヤンクした内容をシステムクリップボードにコピー
 
--- Disable netrw (use Neo-tree instead)
+-- Disable netrw to use plugin
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
