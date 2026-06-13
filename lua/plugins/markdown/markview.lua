@@ -4,4 +4,9 @@ return {
   keys = {
     { "<localleader>mv", "<cmd>Markview Toggle<cr>", desc = "MarkView Toggle" },
   },
+  opts = {
+    preview = {
+      enable = false,
+    },
+  },
 }
