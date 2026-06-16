@@ -11,10 +11,12 @@ return {
     },
   },
   opts = {
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_format = "fallback",
-    },
+    format_on_save = function(bufnr)
+      if vim.bo[bufnr].filetype == "python" then
+        return
+      end
+      return { timeout_ms = 500, lsp_format = "fallback" }
+    end,
     -- フォーマッターを追加する場合、masonでインストール後ここに追記する
     formatters_by_ft = {
       lua = { "stylua" },
