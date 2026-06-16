@@ -9,9 +9,9 @@ return {
   },
   lazy = false,
   opts = {
-    hijack_directories = {
-      enable = true,
-      auto_open = true,
+    hijack_directories = { -- if true, auto open with vi .
+      enable = false,
+      auto_open = false,
     },
     view = {
       width = 30,
