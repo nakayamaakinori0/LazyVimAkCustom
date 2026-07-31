@@ -10,8 +10,8 @@ return {
   lazy = false,
   opts = {
     hijack_directories = { -- if true, auto open with vi .
-      enable = false,
-      auto_open = false,
+      enable = true,
+      auto_open = true,
     },
     view = {
       width = 30,
